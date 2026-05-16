@@ -1,0 +1,2 @@
+Arthur Morgan,[100, 90, 95]
+Lei Jiang,[99, 95, 87]
