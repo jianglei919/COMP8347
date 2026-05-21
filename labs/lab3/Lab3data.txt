@@ -1,0 +1,16 @@
+PUBLISHERS
+1. Wiley		https://www.wiley.com/			Hoboken
+2. Pearson		https://www.pearson.com/			London
+3. Penguin Random House		https://www.penguinrandomhouse.com/			New York
+
+
+BOOKS
+
+1. Machine Learning For Dummies 	S	464 pages	34.99		Wiley
+2. Data Science For Dummies 	S	432 pages	36.99		Wiley
+3. Artificial Intelligence 	S	1136 pages	197.32		Pearson
+4. Computer Networking 	S	720 pages	143.99		Pearson
+5. The Night Circus	F	400 pages	19.00		Penguin Random House
+6. The Underground Railroad	F	320 pages	26.95		Penguin Random House
+7. Becoming	B	464 pages	32.00		Penguin Random House
+8. A Walk in the Woods	T	304 pages	19.00		Penguin Random House
