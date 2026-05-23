@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//private/tmp/**)",
+      "Bash(pandoc /Users/logcabin/Workspace/uwindsor/COMP8347/labs/lab3/Lab3.docx -o lab3.md)",
+      "Read(//Users/logcabin/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/7d8a70e2-961e-48fc-8452-153a32c9dea5/3d80a98f-49d3-4446-9ec7-c56f6f5d4272/skills/docx/**)",
+      "Bash(python scripts/office/unpack.py /Users/logcabin/Workspace/uwindsor/COMP8347/labs/lab3/Lab3.docx /tmp/lab3_unpacked/)",
+      "Bash(unzip -o /Users/logcabin/Workspace/uwindsor/COMP8347/labs/lab3/Lab3.docx -d lab3_unpacked/)",
+      "Bash(python3 -c ' *)",
+      "Bash(zip -r part4.zip part4 -x \"*.DS_Store\")",
+      "Bash(unzip -l part4.zip)"
+    ]
+  }
+}

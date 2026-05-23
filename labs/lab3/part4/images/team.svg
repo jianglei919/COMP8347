@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#2e547a"/>
+  <circle cx="80"  cy="100" r="25" fill="#f5a623"/>
+  <circle cx="140" cy="100" r="25" fill="#f5a623"/>
+  <circle cx="200" cy="100" r="25" fill="#f5a623"/>
+  <circle cx="260" cy="100" r="25" fill="#f5a623"/>
+  <circle cx="320" cy="100" r="25" fill="#f5a623"/>
+  <rect x="55"  y="130" width="50" height="60" rx="4" fill="#f5a623"/>
+  <rect x="115" y="130" width="50" height="60" rx="4" fill="#f5a623"/>
+  <rect x="175" y="130" width="50" height="60" rx="4" fill="#f5a623"/>
+  <rect x="235" y="130" width="50" height="60" rx="4" fill="#f5a623"/>
+  <rect x="295" y="130" width="50" height="60" rx="4" fill="#f5a623"/>
+  <text x="200" y="225" font-family="Arial" font-size="20" fill="white" text-anchor="middle" font-weight="bold">Founding Team</text>
+</svg>
