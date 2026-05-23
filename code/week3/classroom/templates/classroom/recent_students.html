@@ -1,11 +1,12 @@
 {% extends "classroom/base.html" %}
-{% block title %}Students{% endblock %}
+{% block title %}Recent Students{% endblock %}
 
 {% block content %}
 <style>
   body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#a0d8ef,#f9f9f9);min-height:100vh}
-  .page{background:#fff;max-width:700px;margin:40px auto;padding:28px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
-  h1{margin:0 0 16px;color:#004c6d;text-align:center}
+  .page{background:#fff;max-width:760px;margin:40px auto;padding:28px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+  h1{margin:0 0 8px;color:#004c6d;text-align:center}
+  .sub{margin:0 0 16px;color:#555;text-align:center;font-size:14px}
   table{width:100%;border-collapse:collapse;font-size:16px}
   th{background:#004c6d;color:#fff;text-align:left;padding:10px}
   td{padding:10px;border-bottom:1px solid #ddd}
@@ -15,7 +16,8 @@
 </style>
 
 <div class="page">
-  <h1>Registered Students</h1>
+  <h1>Recent Students</h1>
+  <p class="sub">Joined in the last {{ days }} day{{ days|pluralize }} &middot; {{ count }} result{{ count|pluralize }}</p>
   <table>
     <thead>
       <tr><th>Name</th><th>Email</th><th>Phone</th><th>Joined</th></tr>
@@ -29,7 +31,7 @@
           <td>{{ s.join_date|date:"M d, Y" }}</td>
         </tr>
       {% empty %}
-        <tr><td colspan="4" class="empty">No students yet.</td></tr>
+        <tr><td colspan="4" class="empty">No students joined in the last {{ days }} days.</td></tr>
       {% endfor %}
     </tbody>
   </table>

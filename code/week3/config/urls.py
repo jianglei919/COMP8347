@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from hello.views import hello_world
 from hello.views import greet
-from classroom.views import student_list
+from classroom.views import student_list, recent_students
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,3 +26,4 @@ urlpatterns = [
 ]
 urlpatterns += [path("greet/", greet, name="greet")]
 urlpatterns += [path("students/", student_list, name="student-list")]
+urlpatterns += [path("students/recent/", recent_students, name="student-recent")]
