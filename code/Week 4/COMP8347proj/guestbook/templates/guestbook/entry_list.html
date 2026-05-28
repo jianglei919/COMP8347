@@ -1,0 +1,34 @@
+{% extends "classroom/base.html" %}
+{% block title %}Guestbook{% endblock %}
+{% block content %}
+<div class="page">
+  <h1>Guestbook</h1>
+
+  <p class="muted">Your saved name (cookie): {{ saved_name|default:"(none)" }}</p>
+  <p>You’ve added {{ added_count }} entries this session.</p>
+
+  <p>
+    <!-- BUG 7: wrong link to set name route; missing "name" param UI -->
+    <a href="{% url 'gb-set-name' %}">Set my name cookie</a> |
+    <a href="{% url 'gb-clear-name' %}">Clear name cookie</a> |
+    <a href="{% url 'gb-add' %}">Add entry</a>
+  </p>
+
+  <table class="student-table">
+    <thead>
+      <tr><th>Who</th><th>Message</th><th>When</th></tr>
+    </thead>
+    <tbody>
+      {% for e in entries %}
+        <tr>
+          <td>{{ e.display_name|default:"Anonymous" }}</td>
+          <td>{{ e.message }}</td>
+          <td>{{ e.created_at|date:"M d, Y H:i" }}</td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="3" class="empty">No entries yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

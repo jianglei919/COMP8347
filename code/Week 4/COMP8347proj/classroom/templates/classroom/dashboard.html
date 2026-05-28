@@ -1,0 +1,13 @@
+{% extends "classroom/base.html" %}
+{% block content %}
+<div class="page">
+  <h1>Dashboard</h1>
+  <p>Total students: {{ stats.total }}</p>
+  <p>Joined today: {{ stats.joined_today }}</p>
+  <ul>
+    {% for d in stats.by_day %}
+      <li>{{ d.day }} — {{ d.c }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
