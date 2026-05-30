@@ -8,7 +8,8 @@
       "Bash(unzip -o /Users/logcabin/Workspace/uwindsor/COMP8347/labs/lab3/Lab3.docx -d lab3_unpacked/)",
       "Bash(python3 -c ' *)",
       "Bash(zip -r part4.zip part4 -x \"*.DS_Store\")",
-      "Bash(unzip -l part4.zip)"
+      "Bash(unzip -l part4.zip)",
+      "Bash(cd /Users/logcabin/Workspace/uwindsor/DjangoProject && echo \"=== TREE \\(no venv\\) ===\" && find . -type f -not -path '*/.venv/*' -not -path '*/venv/*' -not -path '*/.git/*' -not -path '*/__pycache__/*' -not -path '*/node_modules/*' | head -80)"
     ]
   }
 }
