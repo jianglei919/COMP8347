@@ -1,0 +1,31 @@
+{% extends "classroom/base.html" %}
+{% block title %}Add Entry{% endblock %}
+{% block content %}
+<div class="page">
+  <h1>Sign the Guestbook</h1>
+
+  <form method="post" action="">
+    {% csrf_token %}{# FIX 8: CSRF token so POST is not rejected with 403 #}
+    {% if form.non_field_errors %}
+      <ul class="errorlist">
+        {% for error in form.non_field_errors %}<li>{{ error }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+    <p>
+      <label>Display name</label><br>
+      {# FIX 9: form now defines display_name #}
+      {{ form.display_name }}
+      {% for error in form.display_name.errors %}<span class="error">{{ error }}</span>{% endfor %}
+    </p>
+    <p>
+      <label>Message</label><br>
+      {{ form.message }}
+      {% for error in form.message.errors %}<span class="error">{{ error }}</span>{% endfor %}
+    </p>
+
+    <button type="submit">Save</button>
+  </form>
+
+  <p class="muted">Tip: set your name cookie first so the form can prefill it.</p>
+</div>
+{% endblock %}

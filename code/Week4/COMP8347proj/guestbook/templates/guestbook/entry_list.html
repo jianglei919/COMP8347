@@ -1,0 +1,37 @@
+{% extends "classroom/base.html" %}
+{% block title %}Guestbook{% endblock %}
+{% block content %}
+<div class="page">
+  <h1>Guestbook</h1>
+
+  <p class="muted">Your saved name (cookie): {{ saved_name|default:"(none)" }}</p>
+  <p>You’ve added {{ added_count }} entries this session.</p>
+
+  {# FIX 7: provide a UI that actually sends the "name" query param #}
+  <form method="get" action="{% url 'gb-set-name' %}" style="margin-bottom:.5rem">
+    <input type="text" name="name" maxlength="40" value="{{ saved_name }}" placeholder="Your name">
+    <button type="submit">Set my name cookie</button>
+  </form>
+  <p>
+    <a href="{% url 'gb-clear-name' %}">Clear name cookie</a> |
+    <a href="{% url 'gb-add' %}">Add entry</a>
+  </p>
+
+  <table class="student-table">
+    <thead>
+      <tr><th>Who</th><th>Message</th><th>When</th></tr>
+    </thead>
+    <tbody>
+      {% for e in entries %}
+        <tr>
+          <td>{{ e.display_name|default:"Anonymous" }}</td>
+          <td>{{ e.message }}</td>
+          <td>{{ e.created_at|date:"M d, Y H:i" }}</td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="3" class="empty">No entries yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
