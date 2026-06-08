@@ -1,0 +1,23 @@
+{% extends "classroom/base.html" %}
+{% block content %}
+<div class="page">
+  <h1>User Profile</h1>
+  <p><strong>Username:</strong> {{ user.username }}</p>
+  <p><strong>Email:</strong> {{ user.email }}</p>
+  <p><strong>First name:</strong> {{ user.first_name|default:"(not set)" }}</p>
+  <p><strong>Last name:</strong> {{ user.last_name|default:"(not set)" }}</p>
+
+  <p><a href="{% url 'student-list' %}">Go to Student List</a></p>
+  {% if user.is_authenticated %}
+    <a href="{% url 'password_change' %}">Change password</a>
+    <p></p>
+  <form method="post" action="{% url 'logout' %}" style="display:inline">
+    {% csrf_token %}
+    <button type="submit">Log out</button>
+  </form>
+{% else %}
+  <a href="{% url 'login' %}">Log in</a>
+{% endif %}
+
+</div>
+{% endblock %}
