@@ -1,0 +1,9 @@
+{% extends "classroom/base.html" %}
+{% block content %}
+  <article>
+    <h1>{{ article.title }}</h1>
+    <p><small>by {{ article.author }} | {{ article.created_at|date:"F j, Y, g:i a" }}</small></p>
+    <hr>
+    <p>{{ article.content }}</p>
+  </article>
+{% endblock %}
