@@ -1,0 +1,27 @@
+{% extends "classroom/base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<div class="dashboard-container">
+  <h1>Welcome, {{ user.first_name|default:user.username }}!</h1>
+
+  <div class="stats-box">
+    <p><strong>Total Students:</strong> {{ student_count }}</p>
+  </div>
+
+  <div class="quick-links">
+    <h2>Quick Links</h2>
+    <ul>
+      <li><a href="{% url 'student-list' %}">View Students</a></li>
+      {% if perms.classroom.add_student %}
+      <li><a href="{% url 'add-student' %}">Add Student</a></li>
+      {% endif %}
+      <li><a href="{% url 'password_change' %}">Change Password</a></li>
+        <p></p>
+      <form method="post" action="{% url 'logout' %}" style="display:inline">
+            {% csrf_token %}
+            <button type="submit">Log out</button>
+      </form>
+    </ul>
+  </div>
+</div>
+{% endblock %}

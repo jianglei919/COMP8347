@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #a0d8ef, #f9f9f9);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.page {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 700px;
+}
+
+h1 {
+  text-align: center;
+  color: #004c6d;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.student-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.student-table th {
+  background-color: #004c6d;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.student-table td {
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+
+.student-table tr:nth-child(even) {
+  background-color: #f2f8fb;
+}
+
+.student-table tr:hover {
+  background-color: #e1f5ff;
+}
+
+.empty {
+  text-align: center;
+  color: #888;
+  padding: 20px;
+}
+
+.article-card {
+    background: #f7f7ff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+}
+.article-card h2 a {
+    color: #003366;
+    text-decoration: none;
+}
+.article-card h2 a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,36 @@
+{% extends "classroom/base.html" %}
+{% block title %}Students{% endblock %}
+
+{% block content %}
+<style>
+  body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#a0d8ef,#f9f9f9);min-height:100vh}
+  .page{background:#fff;max-width:700px;margin:40px auto;padding:28px;border-radius:12px;box-shadow:0 8px 20px rgba(0,0,0,.1)}
+  h1{margin:0 0 16px;color:#004c6d;text-align:center}
+  table{width:100%;border-collapse:collapse;font-size:16px}
+  th{background:#004c6d;color:#fff;text-align:left;padding:10px}
+  td{padding:10px;border-bottom:1px solid #ddd}
+  tr:nth-child(even){background:#f2f8fb}
+  tr:hover{background:#e1f5ff}
+  .empty{text-align:center;color:#777;padding:18px}
+</style>
+
+<div class="page">
+  <h1>Registered Students</h1>
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Email</th><th>Joined</th></tr>
+    </thead>
+    <tbody>
+      {% for s in students %}
+        <tr>
+          <td>{{ s.name }}</td>
+          <td>{{ s.email }}</td>
+          <td>{{ s.join_date|date:"M d, Y" }}</td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="3" class="empty">No students yet.</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "classroom/base.html" %}
+{% block content %}
+  <h1>Articles</h1>
+  <div class="article-list">
+    {% for article in articles %}
+      <div class="article-card">
+        <h2><a href="{% url 'article_detail' article.pk %}">{{ article.title }}</a></h2>
+        <p><small>by {{ article.author }} | {{ article.created_at|date:"F j, Y" }}</small></p>
+        <p>{{ article.content|truncatewords:20 }}</p>
+      </div>
+    {% empty %}
+      <p>No articles have been added yet.</p>
+    {% endfor %}
+  </div>
+{% endblock %}
